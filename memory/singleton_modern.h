@@ -1,10 +1,8 @@
 
-#include <functional>
 #include <memory>
-#include <mutex>
 namespace Foundation {
 /// \class template<class T>CSingleton
-/// \brief µ¥ÀıÄ£°åÀà,
+/// \brief å•ä¾‹æ¨¡æ¿ç±»
 /// \see
 template <class T> class Singleton {
 private:
