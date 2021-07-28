@@ -1,21 +1,21 @@
 
 /*
-C++11¹æ¶¨ÁËlocal staticÔÚ¶àÏß³ÌÌõ¼şÏÂµÄ³õÊ¼»¯ĞĞÎª£¬ÒªÇó±àÒëÆ÷±£Ö¤ÁËÄÚ²¿¾²Ì¬±äÁ¿µÄÏß³Ì°²È«ĞÔ¡£
-ÔÚC++11±ê×¼ÏÂ£¬¡¶Effective C++¡·Ìá³öÁËÒ»ÖÖ¸üÓÅÑÅµÄµ¥ÀıÄ£Ê½ÊµÏÖ£¬Ê¹ÓÃº¯ÊıÄÚµÄ local static¶ÔÏó¡£
-ÕâÑù£¬Ö»ÓĞµ±µÚÒ»´Î·ÃÎÊgetInstance()·½·¨Ê±²Å´´½¨ÊµÀı¡£ÕâÖÖ·½·¨Ò²±»³ÆÎªMeyers' Singleton¡£
-C++0xÖ®ºó¸ÃÊµÏÖÊÇÏß³Ì°²È«µÄ£¬C++0xÖ®Ç°ÈÔĞè¼ÓËø
+C++11è§„å®šäº†local staticåœ¨å¤šçº¿ç¨‹æ¡ä»¶ä¸‹çš„åˆå§‹åŒ–è¡Œä¸ºï¼Œè¦æ±‚ç¼–è¯‘å™¨ä¿è¯äº†å†…éƒ¨é™æ€å˜é‡çš„çº¿ç¨‹å®‰å…¨æ€§ã€‚
+åœ¨C++11æ ‡å‡†ä¸‹ï¼Œã€ŠEffective C++ã€‹æå‡ºäº†ä¸€ç§æ›´ä¼˜é›…çš„å•ä¾‹æ¨¡å¼å®ç°ï¼Œä½¿ç”¨å‡½æ•°å†…çš„ local staticå¯¹è±¡ã€‚
+è¿™æ ·ï¼Œåªæœ‰å½“ç¬¬ä¸€æ¬¡è®¿é—®getInstance()æ–¹æ³•æ—¶æ‰åˆ›å»ºå®ä¾‹ã€‚è¿™ç§æ–¹æ³•ä¹Ÿè¢«ç§°ä¸ºMeyers' Singletonã€‚
+C++0xä¹‹åè¯¥å®ç°æ˜¯çº¿ç¨‹å®‰å…¨çš„ï¼ŒC++0xä¹‹å‰ä»éœ€åŠ é”
 */
 namespace Foundation {
 /// \class template<class T>CSingleton
-/// \brief µ¥ÀıÄ£°åÀà,
+/// \brief å•ä¾‹æ¨¡æ¿ç±»,
 /// \see
 template <class T>
 class Singleton {
 private:
     Singleton() = default;
     ~Singleton() = default;
-    Singleton(const Singleton &) = default;
-    Singleton &operator=(const Singleton &) = default;
+    Singleton(const Singleton &) = delete;
+    Singleton &operator=(const Singleton &) = delete;
 
 public:
     static T &getInstance() {
