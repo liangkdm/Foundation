@@ -11,7 +11,8 @@ protected:
     NonCopyable operator=(const NonCopyable &) = delete;
 };
 
-template <typename F> class Events : public NonCopyable {
+template <typename F>
+class Events : public NonCopyable {
 public:
     Events() {
     }
