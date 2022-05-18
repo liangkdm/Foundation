@@ -32,14 +32,16 @@ public:
         connections_.erase(key);
     }
     // 通知
-    template <typename... Args> void Notify(Args &&...args) {
+    template <typename... Args> 
+    void Notify(Args &&...args) {
         for (auto &iter : connections_) {
             iter.second(std::forward<Args>(args)...);
         }
     }
 
 private:
-    template <typename F> int Assign(F &f) {
+    template <typename F> 
+    int Assign(F &f) {
         int k = observer_++;
         connections_.emplace(k, std::forward<F>(f));
         return k;
